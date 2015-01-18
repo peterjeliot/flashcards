@@ -2,13 +2,32 @@
 <html>
 <head>
   <title>Flashcards</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all',
+  'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+        <% end %>
 
-<%= yield %>
+        <% if flash[:errors] %>
+        <ul>
+          <% flash[:errors].each do |err| %>
+          <li><%= err %></li>
+          <% end %>
+        </ul>
+        <% end %>
 
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
