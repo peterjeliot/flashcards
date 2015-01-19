@@ -2,7 +2,7 @@
   <% @flashcards.each do |flashcard| %>
   <tr>
     <td>
-      <%= flashcard.question %>
+      <%= link_to flashcard.question, user_flashcard_url(flashcard) %>
     </td>
   </tr>
   <% end %>
