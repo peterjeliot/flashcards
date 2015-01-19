@@ -1,4 +1,4 @@
-<% action_url = flashcard.persisted? ? user_flashcard_url(flashcard) : user_flashcards_url %>
+<% action_url = flashcard.persisted? ? subject_flashcard_url(flashcard.subject_id, flashcard) : subject_flashcards_url %>
 <% method = flashcard.persisted? ? "PATCH" : "POST" %>
 <% button_msg = flashcard.persisted? ? "Update" : "Create Flashcard" %>
 

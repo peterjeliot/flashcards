@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: flashcards
+# Table name: subjects
 #
 #  id         :integer          not null, primary key
-#  question   :text             not null
-#  answer     :text             not null
-#  author_id  :integer          not null
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  subject_id :integer          not null
 #
 
 require 'test_helper'
 
-class FlashcardTest < ActiveSupport::TestCase
+class SubjectTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

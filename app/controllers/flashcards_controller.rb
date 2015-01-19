@@ -22,11 +22,12 @@ class FlashcardsController < ApplicationController
   def create
     @flashcard = Flashcard.new(flashcard_params)
     @flashcard.author_id = current_user.id
+    @flashcard.subject_id = params[:subject_id]
 
     if @flashcard.save
       flash[:notice] = "Success!"
 
-      redirect_to user_flashcard_url(@flashcard)
+      redirect_to subject_flashcard_url(params[:subject_id], @flashcard)
     else
       flash[:errors] = @flashcard.errors.full_messages
 
@@ -46,7 +47,7 @@ class FlashcardsController < ApplicationController
     if @flashcard.update(flashcard_params)
       flash[:notice] = "Success!"
 
-      redirect_to user_flashcard_url(@flashcard)
+      redirect_to subject_url(params[:subject_id])
     else
       flash[:errors] = @flashcard.errors.full_messages
 
@@ -58,13 +59,14 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.find(params[:id])
     @flashcard.destroy!
 
-    redirect_to flashcards_url
+    redirect_to subject_url(params[:subject_id])
   end
 
   private
 
   def flashcard_params
-    params.require(:flashcard).permit(:question, :answer, :author_id)
+    params.require(:flashcard).permit(:question, :answer,
+                                      :author_id, :subject_id)
   end
 
 end

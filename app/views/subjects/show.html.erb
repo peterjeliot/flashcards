@@ -1,0 +1,16 @@
+<h3><%= @subject.name %></h3>
+
+<table>
+  <% @flashcards.each do |flashcard| %>
+  <tr>
+    <td>
+      <%= link_to flashcard.question, subject_flashcard_url(@subject, flashcard) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= button_to "Create a New Flashcard", new_subject_flashcard_url(@subject),
+method: :get, class: 'btn btn-primary' %>

@@ -2,7 +2,7 @@
   <% @flashcards.each do |flashcard| %>
   <tr>
     <td>
-      <%= link_to flashcard.question, user_flashcard_url(flashcard) %>
+      <%= link_to flashcard.question, subject_flashcard_url(flashcard) %>
     </td>
   </tr>
   <% end %>
@@ -10,5 +10,5 @@
 
 <br>
 
-<%= button_to "Create a New Flashcard", new_user_flashcard_url,
+<%= button_to "Create a New Flashcard", new_subject_flashcard_url,
               method: :get, class: 'btn btn-primary' %>
