@@ -27,7 +27,7 @@ class FlashcardsController < ApplicationController
     if @flashcard.save
       flash[:notice] = "Success!"
 
-      redirect_to subject_flashcard_url(params[:subject_id], @flashcard)
+      redirect_to user_subject_url(params[:subject_id])
     else
       flash[:errors] = @flashcard.errors.full_messages
 
@@ -59,6 +59,10 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.find(params[:id])
     @flashcard.destroy!
 
+    # respond_to do |format|
+    #   format.html { subject_url(params[:subject_id]) }
+    #   format.js   { render :nothing => true }
+    # end
     redirect_to subject_url(params[:subject_id])
   end
 

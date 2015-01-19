@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$('.delete_flashcard').bind('ajax:success', function() {
+  $(this).closest('tr').fadeOut();
+});
