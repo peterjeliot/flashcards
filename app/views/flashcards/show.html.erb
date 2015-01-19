@@ -1,5 +1,10 @@
 <h3><%= @flashcard.question %></h3>
 <pre><%= @flashcard.answer %></pre>
+
 <%= button_to "Edit", edit_user_flashcard_url,
 method: :get,
 class: "btn btn-default" %>
+<br>
+<%= button_to "Delete", user_flashcard_url(@flashcard),
+method: :delete,
+class: "btn btn-danger" %>
