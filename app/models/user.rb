@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
     self.session_token ||= SecureRandom::urlsafe_base64
   end
 
+  has_many :flashcards,
+      class_name: :Flashcard,
+      foreign_key: :author_id,
+      primary_key: :id
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user.nil? || !user.is_password?(password) ? nil : user

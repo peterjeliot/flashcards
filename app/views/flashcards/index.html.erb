@@ -1,0 +1,14 @@
+<table>
+  <% @flashcards.each do |flashcard| %>
+  <tr>
+    <td>
+      <%= flashcard.question %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= button_to "Create a New Flashcard", new_user_flashcard_url,
+              method: :get, class: 'btn btn-primary' %>

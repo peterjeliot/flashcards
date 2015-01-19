@@ -4,8 +4,8 @@
     <nav>
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
-          <li><%= link_to "Home", user_url %></li>
-          <li><%#= link_to "Flashcards", subs_url %></li>
+          <li><%= link_to "Flashcards", flashcards_url %></li>
+          <li><%= link_to "Account", user_url %></li>
           <li><%= link_to "Logout", session_url, method: :delete %></li>
         <% else %>
           <li><%= link_to "Create An Account", new_user_url %></li>
