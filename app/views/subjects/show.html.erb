@@ -4,7 +4,17 @@
   <% @flashcards.each do |flashcard| %>
   <tr>
     <td>
+      <%= link_to "&times;".html_safe, subject_flashcard_url(flashcard.subject_id, flashcard),
+      method: :delete, class: "close delete_flashcard", data: { confirm: "Are you sure?" } %>
+
+    </td>
+    <td><%#= link_to 'Destroy', subject_flashcard_url(@subject, flashcard), :confirm => 'Are you sure?', :method => :delete, :remote=>true, :class=>'delete_flashcard' %></td>
+
+    <td>
       <%= link_to flashcard.question, subject_flashcard_url(@subject, flashcard) %>
+    </td>
+    <td>
+      <%= link_to flashcard.answer, subject_flashcard_url(@subject, flashcard) %>
     </td>
   </tr>
   <% end %>
