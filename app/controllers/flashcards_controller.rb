@@ -59,10 +59,6 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.find(params[:id])
     @flashcard.destroy!
 
-    # respond_to do |format|
-    #   format.html { subject_url(params[:subject_id]) }
-    #   format.js   { render :nothing => true }
-    # end
     redirect_to subject_url(params[:subject_id])
   end
 
