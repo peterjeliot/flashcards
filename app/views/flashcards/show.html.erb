@@ -1,10 +1,42 @@
-<h3><%= @flashcard.question %></h3>
-<pre><%= @flashcard.answer %></pre>
 
-<%= button_to "Edit", edit_subject_flashcard_url,
-method: :get,
-class: "btn btn-default" %>
+Protip: mouse over to see the answer!
+
+<div class="pull-right" style="display:inline-block;">
+	<%= button_to "Edit", edit_subject_flashcard_url,
+	method: :get %>
+</div>
+<div class= "pull-right" style="display:inline-block;">
+	<%= button_to "Delete", subject_flashcard_url(@flashcard.subject_id, @flashcard),
+	method: :delete %>
+</div>
+
+<br><br>
+
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<div class="cardcontent">
+				<%= @flashcard.question %>
+			</div>
+		</div>
+		<div class="back">
+			<div class="cardcontent">
+			<%= @flashcard.answer %>
+			</div>
+		</div>
+	</div>
+</div>
+
 <br>
-<%= button_to "Delete", subject_flashcard_url(@flashcard.subject_id, @flashcard),
-method: :delete,
-class: "btn btn-danger" %>
+
+<div style="float:left;">
+<%= button_to "Prev Card", subject_flashcard_url(@flashcard.subject_id,get_prev(@flashcard)),method: :get, class: "btn btn-success" %></div>
+
+<div style="float:right;">
+<%= button_to "Next Card", subject_flashcard_url(@flashcard.subject_id,get_next(@flashcard)),method: :get, class: "btn btn-success" %></div>
+
+<br><br>
+
+
+
+
