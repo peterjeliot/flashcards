@@ -191,3 +191,8 @@ input { height: auto !important; }
 .back {
   transform: rotateY(180deg);
 }
+
+div .pull-right {
+  padding: 5px;
+  display:inline-block;
+}

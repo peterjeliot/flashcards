@@ -1,15 +1,15 @@
 
 Protip: mouse over to see the answer!
 
-<div class="pull-right" style="display:inline-block;">
-	<%= button_to "Edit", edit_subject_flashcard_url,
-	method: :get %>
-</div>
-<div class= "pull-right" style="display:inline-block;">
+<div class= "pull-right">
 	<%= button_to "Delete", subject_flashcard_url(@flashcard.subject_id, @flashcard),
-	method: :delete %>
+	method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
 </div>
-
+<div class="pull-right">
+	<%= button_to "Edit", edit_subject_flashcard_url,
+	method: :get, class: "btn btn-default" %>
+</div>
+<br>
 <br><br>
 
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -30,13 +30,9 @@ Protip: mouse over to see the answer!
 <br>
 
 <div style="float:left;">
-<%= button_to "Prev Card", subject_flashcard_url(@flashcard.subject_id,get_prev(@flashcard)),method: :get, class: "btn btn-success" %></div>
+<%= button_to "Prev Card", subject_flashcard_url(@flashcard.subject_id,get_prev(@flashcard)), method: :get, class: "btn btn-success" %></div>
 
 <div style="float:right;">
-<%= button_to "Next Card", subject_flashcard_url(@flashcard.subject_id,get_next(@flashcard)),method: :get, class: "btn btn-success" %></div>
+<%= button_to "Next Card", subject_flashcard_url(@flashcard.subject_id,get_next(@flashcard)), method: :get, class: "btn btn-success" %></div>
 
 <br><br>
-
-
-
-
