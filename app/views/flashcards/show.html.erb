@@ -9,6 +9,10 @@ Protip: mouse over to see the answer!
 	<%= button_to "Edit", edit_subject_flashcard_url,
 	method: :get, class: "btn btn-default" %>
 </div>
+<div class="pull-right">
+	<%= button_to "Back to " + @flashcard.subject.name, subject_url(@flashcard.subject_id),
+	method: :get, class: "btn btn-default" %>
+</div>
 <br>
 <br><br>
 
