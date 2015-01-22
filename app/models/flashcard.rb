@@ -20,4 +20,12 @@ class Flashcard < ActiveRecord::Base
       primary_key: :id
 
   belongs_to :subject
+
+  def next
+    subject.flashcards.where("id > ?", id).first
+  end
+
+  def prev
+    subject.flashcards.where("id < ?", id).last
+  end
 end
