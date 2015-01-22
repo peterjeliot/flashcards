@@ -9,16 +9,8 @@
     </td>
 
     <td>
-      <%= link_to flashcard.question, subject_flashcard_url(@subject, flashcard) %>
-      <br>
-      <div class="answers hidden">
-        <pre><%= flashcard.answer %></pre>
-      </div>
-    </td>
-    <td>
-
-    <a href="#" class="btn btn-default answersToggle" style="margin-left: 15px;">answer</a>
-
+      <%= link_to flashcard.question,
+          subject_flashcard_url(@subject, flashcard) %>
     </td>
   </tr>
   <% end %>
@@ -28,13 +20,3 @@
 
 <%= button_to "Create a New Flashcard", new_subject_flashcard_url(@subject),
 method: :get, class: 'btn btn-primary' %>
-
-<script>
-(function ($) {
-  $(function() {
-    $('.answersToggle').click(function(){
-      $(this).parent().prev().find(".answers").toggleClass('hidden');
-    });
-  });
-})(window.jQuery);
-</script>

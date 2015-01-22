@@ -17,7 +17,10 @@
 </div>
 
 <pre><strong><%= @flashcard.question %></strong></pre>
-<pre><%= @flashcard.answer %></pre>
+<a href="#" class="btn btn-default answersToggle" style="width: 100%">answer</a>
+<div class="answers hidden">
+	<pre><%= @flashcard.answer %></pre>
+</div>
 
 <div class="flashcard-bottom">
 	<div class="pull-left">
@@ -34,3 +37,14 @@
 		<% end %>
 	</div>
 </div>
+
+
+<script>
+(function ($) {
+	$(function() {
+		$('.answersToggle').click(function(){
+			$(this).next().toggleClass('hidden');
+		});
+	});
+})(window.jQuery);
+</script>
