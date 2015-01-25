@@ -1,4 +1,7 @@
 <h3><%= @subject.name %></h3>
+<p>
+  Download: <%= link_to "CSV", subject_url(@subject, { format: "csv" }) %>
+</p>
 
 <table>
   <% @flashcards.each do |flashcard| %>

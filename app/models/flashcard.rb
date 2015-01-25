@@ -28,4 +28,13 @@ class Flashcard < ActiveRecord::Base
   def prev
     subject.flashcards.where("id < ?", id).last
   end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |flashcard|
+        csv << flashcard.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

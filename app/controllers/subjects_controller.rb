@@ -11,7 +11,10 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
     @flashcards = @subject.flashcards
 
-    render :show
+    respond_to do |format|
+      format.html {render :show }
+      format.csv { send_data @flashcards.to_csv }
+    end
   end
 
   def new
