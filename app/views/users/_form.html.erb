@@ -1,11 +1,12 @@
 <% method = user.persisted? ? "PATCH" : "POST" %>
+<% placeholder = user.persisted? ? user.username : "eg. velina" %>
 <% btn_msg = user.persisted? ? "Update #{user.username}" : "Create Account" %>
 
 
 <%= form_for(user, url: user_url) do |f| %>
 <input  type="hidden" name="_method" value="<%= method %>">
 <%= f.label :username %>
-<%= f.text_field :username, placeholder: user.username,
+<%= f.text_field :username, placeholder: placeholder,
 class: 'form-control' %>
 
 <%= f.label :password %>
