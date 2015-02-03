@@ -71,8 +71,11 @@ class SubjectsController < ApplicationController
                         .select(:author_id).distinct.pluck(:author_id)
     @contributors = {}
     @contributor_ids.each do |id|
-      @contributors[User.find(id).username] = @subject_flashcards.where(author_id: id).count
+      score = @subject_flashcards.where(author_id: id).count
+      @contributors[User.find(id).username] = score
     end
+
+    @contributors = @contributors.sort_by {|_key, value| value}.reverse
   end
 
   private
