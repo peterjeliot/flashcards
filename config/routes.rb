@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   end
   resources :subjects do
     resources :flashcards, except: [:index]
+    member do
+      get :contributors
+    end
   end
   # resources :flashcards, only: [:index]
   resource :session, only: [:new, :create, :destroy]

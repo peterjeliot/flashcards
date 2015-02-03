@@ -2,6 +2,7 @@
 <p>
   Download: <%= link_to "CSV", subject_url(@subject, { format: "csv" }) %>
 </p>
+<p><%= link_to "Contributors", contributors_subject_url(@subject.id) %></p>
 
 <table>
   <% @flashcards.each do |flashcard| %>

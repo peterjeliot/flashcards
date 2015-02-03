@@ -65,6 +65,16 @@ class SubjectsController < ApplicationController
     redirect_to subjects_url
   end
 
+  def contributors
+    @subject_flashcards = Flashcard.where(subject_id: params[:id])
+    @contributor_ids = @author_ids = @subject_flashcards
+                        .select(:author_id).distinct.pluck(:author_id)
+    @contributors = {}
+    @contributor_ids.each do |id|
+      @contributors[User.find(id).username] = @subject_flashcards.where(author_id: id).count
+    end
+  end
+
   private
 
   def subject_params

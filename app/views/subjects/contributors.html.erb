@@ -1,0 +1,16 @@
+<table class="contributors">
+  <% @contributors.each do |contributor, points| %>
+  <tr>
+    <td>
+      <% if contributor == current_user.username %>
+        <span style="font-weight: bold; color: #e60">YOU</span>
+      <% else %>
+        <%= contributor %>
+      <% end %>
+    </td>
+    <td>
+      <%= points %>
+    </td>
+  </tr>
+  <% end %>
+</table>
