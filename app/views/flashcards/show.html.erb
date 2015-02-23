@@ -25,15 +25,15 @@
 <div class="flashcard-bottom">
 	<div class="pull-left">
 		<% unless @flashcard.prev.nil? %>
-			<%= button_to "Prev Card", subject_flashcard_url(@flashcard.subject_id,
-					@flashcard.prev), method: :get, class: "btn btn-success" %>
+			<%= link_to "Prev Card", subject_flashcard_url(@flashcard.subject_id,
+					@flashcard.prev), class: "btn btn-success" %>
 		<% end %>
 	</div>
 
 	<div class="pull-right">
 		<% unless @flashcard.next.nil? %>
-			<%= button_to "Next Card", subject_flashcard_url(@flashcard.subject_id,
-					@flashcard.next), method: :get, class: "btn btn-success" %>
+			<%= link_to "Next Card", subject_flashcard_url(@flashcard.subject_id,
+					@flashcard.next), class: "btn btn-success" %>
 		<% end %>
 	</div>
 </div>
