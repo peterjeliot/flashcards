@@ -137,5 +137,10 @@ input { height: auto !important; }
 .answersToggle { margin-bottom: 10px; }
 
 .contributors {
- tr td { padding: 0 10px;}
+  tr td { padding: 0 10px;}
+}
+
+.answers pre {
+  white-space: pre-wrap;
+  word-break: normal;
 }
