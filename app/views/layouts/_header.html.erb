@@ -1,6 +1,8 @@
 <header class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <%= link_to "<span style='color:steelblue'>Flash</span><span>cards</span>".html_safe, root_url, id: "logo" %>
+  <div class="container-fluid">
+    <a id="logo" href="<%= root_url %>">
+      <span style="color: steelblue">Flash</span><span>Cards</span>
+    </a>
     <nav>
       <ul class="nav navbar-nav pull-right">
         <% if current_user %>
