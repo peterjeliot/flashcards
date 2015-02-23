@@ -138,3 +138,8 @@ input { height: auto !important; }
  .contributors {
    tr td { padding: 0 10px;}
  }
+
+.answers pre {
+  white-space: pre-wrap;
+  word-break: normal;
+}
