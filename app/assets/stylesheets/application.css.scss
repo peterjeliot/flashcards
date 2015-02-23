@@ -81,11 +81,11 @@ footer {
 
 /* forms */
 
-/*input,*/ textarea, select, .uneditable-input {
-border: 1px solid #bbb;
-width: 100%;
-margin-bottom: 15px;
-@include box_sizing;
+textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
 }
 
 input { height: auto !important; }
@@ -116,8 +116,8 @@ input { height: auto !important; }
   filter: alpha(opacity=20);
   text-decoration: none;
   padding: 0 5px 5px 0;
-
 }
+
 .close:hover {
   color: #000000;
   text-decoration: none;
@@ -127,6 +127,7 @@ input { height: auto !important; }
 }
 
 .flashcard-top .btn { margin-left: 10px; }
+
 .flashcard-top input:first-of-type { margin: 0 10px 0 0; }
 
 .flashcard-top { margin-bottom: 60px; }
@@ -135,6 +136,6 @@ input { height: auto !important; }
 
 .answersToggle { margin-bottom: 10px; }
 
- .contributors {
-   tr td { padding: 0 10px;}
- }
+.contributors {
+ tr td { padding: 0 10px;}
+}
