@@ -47,7 +47,7 @@ class FlashcardsController < ApplicationController
     if @flashcard.update(flashcard_params)
       flash[:notice] = "Success!"
 
-      redirect_to subject_url(params[:subject_id])
+      redirect_to subject_flashcard_url(params[:subject_id], params[:id])
     else
       flash[:errors] = @flashcard.errors.full_messages
 
